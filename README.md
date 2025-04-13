@@ -14,7 +14,6 @@ A full-stack application for scheduling interviews between users. Built with Spr
 ## Prerequisites
 
 - Java 11 or higher
-- Node.js 14 or higher
 - Maven
 - npm
 - Google Account with Calendar API enabled
@@ -42,28 +41,6 @@ A full-stack application for scheduling interviews between users. Built with Spr
    ./mvnw spring-boot:run
    ```
 5. The backend will start on http://localhost:8080
-
-## Frontend Setup
-
-1. Navigate to the frontend directory:
-
-   ```bash
-   cd frontend
-   ```
-
-2. Install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-
-   ```bash
-   npm start
-   ```
-
-4. The frontend will start on http://localhost:3000
 
 ## Usage
 
@@ -94,13 +71,6 @@ A full-stack application for scheduling interviews between users. Built with Spr
 
 - POST /api/google-meet/schedule - Schedule a Google Meet for an interview
 - POST /api/google-meet/schedule-random-pair - Schedule a Google Meet for a random pair of users
-
-## Security Notes
-
-- Never commit your `application.properties` file with real credentials
-- Keep your Google Calendar API credentials secure
-- Use environment variables for sensitive information
-- The tokens directory is excluded from version control
 
 ## License
 
