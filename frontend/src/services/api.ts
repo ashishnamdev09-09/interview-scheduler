@@ -32,10 +32,22 @@ export const interviewService = {
     scheduledTime: string
   ) =>
     api.post<Interview>("/google-meet/schedule-random-pair", null, {
+      params: { title, description, scheduledTime },
+    }),
+  scheduleManual: (
+    title: string,
+    description: string,
+    scheduledTime: string,
+    interviewerId: number,
+    intervieweeId: number
+  ) =>
+    api.post<Interview>("/google-meet/schedule", null, {
       params: {
         title,
         description,
         scheduledTime,
+        interviewerId,
+        intervieweeId,
       },
     }),
 };
@@ -43,5 +55,8 @@ export const interviewService = {
 export const googleMeetService = {
   getByInterviewId: (interviewId: number) =>
     api.get<GoogleMeet>(`/google-meet/interview/${interviewId}`),
-  checkAuthStatus: () => api.get<string>("/google-meet/auth-status"),
+  checkAuthStatus: () =>
+    api.get<string>("/google-meet/auth-status", {
+      transformResponse: [(data) => data],
+    }),
 };

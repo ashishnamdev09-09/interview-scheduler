@@ -28,4 +28,7 @@ public class Interview {
     @ManyToOne
     @JoinColumn(name = "interviewee_id")
     private User interviewee;
+
+    @Column(nullable = false)
+    private String status = "SCHEDULED"; // SCHEDULED, COMPLETED, CANCELLED
 } 

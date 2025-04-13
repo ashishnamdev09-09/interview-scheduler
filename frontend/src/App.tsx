@@ -1,29 +1,27 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
-import { ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import { theme } from "./utils/theme";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ThemeProvider, CssBaseline, Box } from "@mui/material";
+import { theme } from "./theme";
 import { Layout } from "./components/Layout";
+import { Home } from "./pages/Home";
 import { Users } from "./pages/Users";
 import { Interviews } from "./pages/Interviews";
+import { ScheduleMeeting } from "./pages/ScheduleMeeting";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
-        <Layout>
+        <Box sx={{ minHeight: "100vh", position: "relative" }}>
           <Routes>
-            <Route path="/users" element={<Users />} />
-            <Route path="/interviews" element={<Interviews />} />
-            <Route path="/" element={<Navigate to="/interviews" replace />} />
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="users" element={<Users />} />
+              <Route path="interviews" element={<Interviews />} />
+              <Route path="schedule" element={<ScheduleMeeting />} />
+            </Route>
           </Routes>
-        </Layout>
+        </Box>
       </Router>
     </ThemeProvider>
   );
