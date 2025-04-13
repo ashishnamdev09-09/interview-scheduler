@@ -35,4 +35,7 @@ build/
 ### Application specific ###
 src/main/resources/tokens/
 src/main/resources/credentials.json
-application.properties 
+application.properties
+
+### Node.js ###
+node_modules/ 
