@@ -17,6 +17,11 @@ public class InterviewController {
     @Autowired
     private InterviewService interviewService;
 
+    @GetMapping
+    public ResponseEntity<List<Interview>> getAllInterviews() {
+        return ResponseEntity.ok(interviewService.getAllInterviews());
+    }
+
     @PostMapping
     public ResponseEntity<Interview> scheduleInterview(@Valid @RequestBody Interview interview) {
         return ResponseEntity.ok(interviewService.scheduleInterview(interview));

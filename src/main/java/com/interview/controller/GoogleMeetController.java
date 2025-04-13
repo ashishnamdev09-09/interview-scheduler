@@ -27,6 +27,26 @@ public class GoogleMeetController {
     @Autowired
     private InterviewService interviewService;
 
+    @GetMapping("/auth-status")
+    public ResponseEntity<String> checkAuthStatus() {
+        try {
+            if (googleMeetService.isAuthorized()) {
+                return ResponseEntity.ok("Authorized");
+            } else {
+                // If not authorized, get the authorization URL
+                googleMeetService.getCredentials(); // This will throw an exception with the URL
+                return ResponseEntity.ok("Authorized"); // This line should never be reached
+            }
+        } catch (Exception e) {
+            String authUrl = e.getMessage();
+            if (authUrl.contains("Please authorize")) {
+                return ResponseEntity.status(401)
+                    .body("{\"status\":\"unauthorized\",\"authUrl\":\"" + authUrl + "\"}");
+            }
+            return ResponseEntity.status(500).body("Error checking auth status: " + e.getMessage());
+        }
+    }
+
     @PostMapping("/schedule")
     public ResponseEntity<GoogleMeet> scheduleGoogleMeet(
             @RequestParam Long interviewerId,

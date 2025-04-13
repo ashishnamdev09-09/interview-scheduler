@@ -1,0 +1,56 @@
+# Git
+.git
+.gitignore
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Documentation
+*.md
+README.md
+CHANGELOG.md
+docs/
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+.project
+.classpath
+.settings/
+
+# Build outputs
+target/
+!target/*.jar
+build/
+dist/
+node_modules/
+
+# Logs
+*.log
+logs/
+
+# Credentials and tokens
+credentials/
+tokens/
+
+# Test files
+**/test/
+**/tests/
+**/*.test.js
+**/*.spec.js
+
+# Docker files
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# Misc
+.DS_Store
+Thumbs.db 

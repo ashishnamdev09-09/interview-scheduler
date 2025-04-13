@@ -12,6 +12,10 @@ public class InterviewService {
     @Autowired
     private InterviewRepository interviewRepository;
 
+    public List<Interview> getAllInterviews() {
+        return interviewRepository.findAll();
+    }
+
     public Interview scheduleInterview(Interview interview) {
         return interviewRepository.save(interview);
     }

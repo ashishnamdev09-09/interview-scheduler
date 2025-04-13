@@ -60,7 +60,7 @@ public class GoogleMeetService {
     @Autowired
     private EmailService emailService;
 
-    private Credential getCredentials() throws IOException, GeneralSecurityException {
+    public Credential getCredentials() throws IOException, GeneralSecurityException {
         // Build the calendar service
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
         
@@ -91,6 +91,15 @@ public class GoogleMeetService {
         }
         
         return credential;
+    }
+
+    public boolean isAuthorized() {
+        try {
+            getCredentials();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public GoogleMeet scheduleGoogleMeet(Interview interview, LocalDateTime scheduledTime) {
