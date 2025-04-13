@@ -58,11 +58,24 @@ A full-stack application for scheduling interviews between users. Built with Spr
    npm install
    ```
 
-3. Start the development server:
+3. Create a `.env` file in the frontend directory with the following content:
+
+   ```
+   REACT_APP_API_URL=http://localhost:8080
+   ```
+
+4. Start the development server:
+
    ```bash
    npm start
    ```
-4. The frontend will start on http://localhost:3000
+
+5. The frontend will start on http://localhost:3000
+
+6. For production build:
+   ```bash
+   npm run build
+   ```
 
 ## Docker Setup
 
