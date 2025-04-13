@@ -10,13 +10,15 @@ A full-stack application for scheduling interviews between users. Built with Spr
 - Create Google Meet links for interviews
 - Send calendar invites to participants
 - Modern and responsive UI
+- Docker support for easy deployment
 
 ## Prerequisites
 
 - Java 11 or higher
 - Maven
-- npm
+- Node.js and npm
 - Google Account with Calendar API enabled
+- Docker (optional)
 
 ## Backend Setup
 
@@ -41,6 +43,44 @@ A full-stack application for scheduling interviews between users. Built with Spr
    ./mvnw spring-boot:run
    ```
 5. The backend will start on http://localhost:8080
+
+## Frontend Setup
+
+1. Navigate to the frontend directory:
+
+   ```bash
+   cd frontend
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+4. The frontend will start on http://localhost:3000
+
+## Docker Setup
+
+1. Build the Docker images:
+
+   ```bash
+   docker-compose build
+   ```
+
+2. Start the containers:
+
+   ```bash
+   docker-compose up
+   ```
+
+3. The application will be available at:
+   - Frontend: http://localhost:3000
+   - Backend: http://localhost:8080
 
 ## Usage
 
@@ -71,6 +111,10 @@ A full-stack application for scheduling interviews between users. Built with Spr
 
 - POST /api/google-meet/schedule - Schedule a Google Meet for an interview
 - POST /api/google-meet/schedule-random-pair - Schedule a Google Meet for a random pair of users
+
+## Health Check
+
+The application includes a health check endpoint at `/actuator/health` to monitor the application's status.
 
 ## License
 
