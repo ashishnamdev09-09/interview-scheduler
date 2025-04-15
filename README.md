@@ -125,9 +125,6 @@ A full-stack application for scheduling interviews between users. Built with Spr
 - POST /api/google-meet/schedule - Schedule a Google Meet for an interview
 - POST /api/google-meet/schedule-random-pair - Schedule a Google Meet for a random pair of users
 
-## Health Check
-
-The application includes a health check endpoint at `/actuator/health` to monitor the application's status.
 
 ## License
 
