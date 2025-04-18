@@ -1,7 +1,6 @@
 # Interview Scheduler
 
-A full-stack application for scheduling interviews between users. Built with Spring Boot, React, and Tailwind CSS.
-
+A full-stack application for scheduling interviews between users. Built with Spring Boot and React.
 ## Features
 
 - Add users with username and email
